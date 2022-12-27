@@ -3,7 +3,7 @@ const express = require("express");
 const app = express();
 const connectDB = require("./db/connect");
 
-const PORT = process.env.Port || 5000;
+const PORT = process.env.PORT || 5000;
 
 const products_routes = require("./routes/products");
 
@@ -18,7 +18,7 @@ const start = async () => {
   try {
     await connectDB(process.env.MONGODB_URL);
     app.listen(PORT, () => {
-      console.log("yes connected");
+      console.log(`${PORT} yes connected`);
     });
   } catch (error) {
     console.log(error);

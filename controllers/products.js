@@ -1,4 +1,3 @@
-const product = require("../models/product");
 const Product = require("../models/product");
 
 const getAllProducts = async (req, res) => {
@@ -17,7 +16,7 @@ const getAllProducts = async (req, res) => {
     queryObject.name = { $regex: name, $options: "i" };
   }
 
-  let apiData = product.find(queryObject);
+  let apiData = Product.find(queryObject);
 
   if (sort) {
     let sortFix = sort.split(",").join(" ");
